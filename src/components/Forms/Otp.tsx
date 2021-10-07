@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View } from "react-native";
-import { TextInput, Button } from "components";
+import { NumericInput, Button } from "components";
 import { LABELS, LENGTH } from "constant";
 
 const OtpForm: () => JSX.Element = () => {
@@ -18,7 +18,7 @@ const OtpForm: () => JSX.Element = () => {
 
 		<View>
 
-			<TextInput
+			<NumericInput
 				placeholder={LABELS.OTP_PLACEHOLDER}
 				title={LABELS.OTP_INPUT_FIELD_TITLE}
 				onChangeText={onChangeOTP}

@@ -27,7 +27,7 @@ function App() {
 		(!fontsLoaded) ? <AppLoading />
 			: (
 				<View style={styles.container}>
-					{/* input "Login" or "SignUp" or "OTP*/}
+					{/* input "Login" or "SignUp" or "OTP" or "TransferCoin" */}
 					<Screen.OTP />	
 				</View>
 			)
