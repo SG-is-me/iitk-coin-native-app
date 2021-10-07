@@ -25,7 +25,6 @@ export default StyleSheet.create({
 		shadowColor: COLORS.BLACK,
 		shadowOpacity: 0.25,
 		shadowOffset: { width: 0, height: 4 },
-
 	},
 
 	containerTitle: {

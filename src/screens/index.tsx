@@ -3,6 +3,7 @@ import React from "react";
 import LoginPage from "./Login/LoginScreen";
 import SignUpPage from "./SignUp/SignUpScreen";
 import OtpPage from "./Otp/OtpScreen";
+import TransferCoinPage from "./TransferCoin/TransferCoinScreen";
 
 const shrinkedHeader = <Header.Shrinked />;
 const expandedHeader = <Header.Expanded />;
@@ -34,4 +35,13 @@ const OTP: () => JSX.Element = () => {
 	);
 };
 
-export default { Login, SignUp, OTP };
+const TransferCoin: () => JSX.Element = () => {
+
+	return (
+		<BottomSheet expandedHeader={expandedHeader} shrinkedHeader={shrinkedHeader}>
+			<TransferCoinPage/>
+		</BottomSheet>
+	);
+};
+
+export default { Login, SignUp, OTP, TransferCoin };

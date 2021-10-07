@@ -27,6 +27,7 @@ const TextInput: React.FC<Props> = (props) => {
 				secureTextEntry={password}
 				onChangeText={onChangeText}
 				value={value}
+				keyboardType={"numeric"}
 			/>
 
 		</View>

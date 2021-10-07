@@ -2,10 +2,11 @@ import React from "react";
 import LoginForm from "./Login";
 import SignUpForm from "./SignUp";
 import OtpForm from "./Otp";
+import TransferCoinForm from "./TransferCoin";
 import { View } from "react-native";
 
 interface Props {
-    form: "Login" | "SignUp" | "OTP"
+    form: "Login" | "SignUp" | "OTP" | "TransferCoin"
 }
 
 const Forms: React.FC<Props> = ({ form }) => {
@@ -20,6 +21,10 @@ const Forms: React.FC<Props> = ({ form }) => {
 
 	if (form == "OTP") {
 		return <OtpForm />;
+	}
+
+	if (form == "TransferCoin") {
+		return <TransferCoinForm />;
 	}
 
 	return <View />;
