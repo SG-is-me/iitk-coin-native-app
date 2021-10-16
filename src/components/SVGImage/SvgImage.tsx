@@ -34,12 +34,20 @@ const SImage: React.FC<Prop> = (props) => {
 
 	if (name === "CoinLogo") {
 		SVG = source.coinLogo;
+        
+		if (style != undefined) {
+			return (
+				<SVG style={[styles.default, styles.coinLogo, style]} />)
+			;
+		}
+
 		return (
-			<SVG height={height} style={[styles.default, styles.coinLogo, style]} />
+			<SVG width={height} style={[styles.default, styles.coinLogo, style]} />
 		);
 	}
 
 	return <View />;
+
 };
 
 export default SImage;
