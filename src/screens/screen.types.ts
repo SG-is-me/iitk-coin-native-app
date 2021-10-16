@@ -1,5 +1,8 @@
 export const enum ScreenType {
 	LOGIN = "LOGIN",
 	SIGNUP = "SIGNUP",
-	HOME = "HOME"
+	HOME = "HOME",
+	TRANSFER = "TRANSFER",
+	REDEEM = "REDEEM",
+	ACCOUNT = "ACCOUNT"
 }

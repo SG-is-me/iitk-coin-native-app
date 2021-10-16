@@ -1,15 +1,20 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-	contentContainer: {
-		flex: 1,
-		alignItems: "center",
-		marginLeft: 45,
-		marginRight: 44,
-	},
-
-	formContainer: {
-		width:"100%",
+	containerChildWrapper: {
 		flex:1,
+		width:"100%",
+	},
+	contentContainer: {
+		alignItems: "center",
+		flex: 1,
+		paddingBottom: 22,
+		paddingHorizontal: 22,
+	},
+	
+	titleLeft: {
+		flexDirection:"row", 
+		justifyContent:"flex-start", 
+		width: "100%",
 	}
 });

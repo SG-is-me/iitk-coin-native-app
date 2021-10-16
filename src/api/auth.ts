@@ -1,20 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
+
 import { API } from "constant";
 
 // Interfaces
 interface OTPParams {
-	Rollno: string;
+	RollNo: string;
 }
 
 interface SignupParams {
-	Rollno: string;
+	RollNo: string;
 	Password: string;
 	OTP: string;
 }
 
 interface LoginParams {
-	Rollno: string;
+	RollNo: string;
 	Password: string;
 }
 
@@ -28,13 +29,13 @@ interface Response {
 const postOTP = async (params: OTPParams): Promise<Response> => {
 	let payload, status;
 	await axios.post(API.BACKEND.BASE_URL + API.BACKEND.ENDPOINT.OTP, {
-		Rollno: params.Rollno,
+		RollNo: params.RollNo,
 	}).then(res => {
 		payload = res.data;
 		status = res.status;
 	}).catch(err => {
-		payload = err.response.data;
-		status = err.response.status;
+		payload = err?.response?.data ?? API.BACKEND.ERROR.NETWORK.PAYLOAD;
+		status = err?.response?.status ?? API.BACKEND.ERROR.NETWORK.STATUS;
 	});
 
 	const response: Response = {
@@ -47,15 +48,15 @@ const postOTP = async (params: OTPParams): Promise<Response> => {
 const postSignup = async (params: SignupParams): Promise<Response> => {
 	let payload, status;
 	await axios.post(API.BACKEND.BASE_URL + API.BACKEND.ENDPOINT.SIGNUP, {
-		Rollno: params.Rollno,
+		RollNo: params.RollNo,
 		Password: params.Password,
 		OTP: params.OTP
 	}).then(res => {
 		payload = res.data;
 		status = res.status;
 	}).catch(err => {
-		payload = err.response.data;
-		status = err.response.status;
+		payload = err?.response?.data ?? API.BACKEND.ERROR.NETWORK.PAYLOAD;
+		status = err?.response?.status ?? API.BACKEND.ERROR.NETWORK.STATUS;
 	});
 	const response: Response = {
 		Payload: payload,
@@ -68,15 +69,15 @@ const postLogin = async (params: LoginParams): Promise<Response> => {
 	let payload, status;
 	let token: any;
 	await axios.post(API.BACKEND.BASE_URL + API.BACKEND.ENDPOINT.LOGIN, {
-		Rollno: params.Rollno,
+		RollNo: params.RollNo,
 		Password: params.Password
 	}).then(res => {
 		token = res.headers["set-cookie"][0];
 		payload = res.data;
 		status = res.status;
 	}).catch(err => {
-		payload = err.response.data;
-		status = err.response.status;
+		payload = err?.response?.data ?? API.BACKEND.ERROR.NETWORK.PAYLOAD;
+		status = err?.response?.status ?? API.BACKEND.ERROR.NETWORK.STATUS;
 	});
 	const response: Response = {
 		Payload: payload,
@@ -96,8 +97,8 @@ const postLogout = async (token: string): Promise<Response> => {
 		payload = res.data;
 		status = res.status;
 	}).catch(err => {
-		payload = err.response.data;
-		status = err.response.status;
+		payload = err?.response?.data ?? API.BACKEND.ERROR.NETWORK.PAYLOAD;
+		status = err?.response?.status ?? API.BACKEND.ERROR.NETWORK.STATUS;
 	});
 	const response: Response = {
 		Payload: payload,
@@ -116,8 +117,8 @@ const postLoginStatus = async (token: string): Promise<Response> => {
 		payload = res.data;
 		status = res.status;
 	}).catch(err => {
-		payload = err.response.data;
-		status = err.response.status;
+		payload = err?.response?.data ?? API.BACKEND.ERROR.NETWORK.PAYLOAD;
+		status = err?.response?.status ?? API.BACKEND.ERROR.NETWORK.STATUS;
 	});
 	const response: Response = {
 		Payload: payload,

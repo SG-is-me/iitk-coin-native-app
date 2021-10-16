@@ -1,35 +1,33 @@
 import React from "react";
 import { View } from "react-native";
-import { TextInput, Button } from "components";
-import { LABELS, LENGTH } from "constant";
+
+import { TextInput } from "components/TextInput";
+import Button from "components/Button";
+import { LABELS } from "constant";
+import { validator } from "utils";
 
 interface Props {
 	setName: (name: string) => void;
 	setPassword: (password: string) => void;
 	setRollNo: (rollNo: string) => void;
-	onPressSubmit: () => void
+	onPressSubmit: () => void;
+	errors?: typeof validator.forms.signup.emptyError;
 }
 
 const SignupForm: React.FC<Props> = (props) => {
 
-	const { setName, setPassword, setRollNo, onPressSubmit } = props;
+	const { setName, setPassword, setRollNo, onPressSubmit, errors } = props;
 
 	const onChangeName = (name: string) => {
-		if (name.length < LENGTH.NAME) {
-			setName(name);
-		}
+		setName(name);
 	};
 
 	const onChangeRollNo = (rollNo: string) => {
-		if (rollNo.length < LENGTH.ROLL_NO) {
-			setRollNo(rollNo);
-		}
+		setRollNo(rollNo);
 	};
 
 	const onChangePassword = (password: string) => {
-		if (password.length < LENGTH.PASSWORD) {
-			setPassword(password);
-		}
+		setPassword(password);
 	};
 
 	return (
@@ -40,18 +38,21 @@ const SignupForm: React.FC<Props> = (props) => {
 				placeholder={LABELS.ROLL_NO_PLACEHOLDER}
 				title={LABELS.ROLL_NO_INPUT_FIELD_TITLE}
 				onChangeText={onChangeRollNo}
+				error={errors?.rollNo}
 			/>
 
 			<TextInput
 				placeholder={LABELS.NAME_PLACEHOLDER}
 				title={LABELS.NAME_INPUT_FIELD_TITLE}
 				onChangeText={onChangeName}
+				error={errors?.name}
 			/>
 
 			<TextInput
 				placeholder={LABELS.PASSWORD_PLACEHOLDER}
 				title={LABELS.PASSWORD_INPUT_FIELD_TITLE}
 				onChangeText={onChangePassword}
+				error={errors?.password}
 			/>
 
 			<Button title={LABELS.SIGNUP_BUTTON_TEXT} onPress={() => onPressSubmit()} />
