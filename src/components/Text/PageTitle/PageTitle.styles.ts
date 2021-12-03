@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
 		justifyContent: "flex-start",
 		maxHeight: 50,
 		opacity: 1,
+		paddingLeft: 3,
 		width: 50,
 	},
 	icon: {
