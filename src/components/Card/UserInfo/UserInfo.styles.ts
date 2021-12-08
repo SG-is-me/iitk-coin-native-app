@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
 		flexDirection: "column",
 		height: "100%",
 		justifyContent: "center",
+		padding: 2,
 	},
 	row: {
 		flex: 2,
@@ -36,9 +37,12 @@ const styles = StyleSheet.create({
 	},
 	title: {
 		fontSize: fontSize / 1.5,
-	},value: {
-		fontSize: fontSize*1.2,
+	},
+	value: {
+		color: "#414141",
+		fontSize: fontSize*1.07,
 		opacity: 1,
+		paddingTop: 2,
 
 		textShadowColor: COLORS.BLACK_25_PERCENT,
 		textShadowOffset: { width: 0, height: 2 },

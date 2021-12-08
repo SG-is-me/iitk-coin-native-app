@@ -4,7 +4,7 @@ import { COLORS, LAYOUT } from "styles";
 
 const styles = StyleSheet.create({
 	about: {
-		borderBottomWidth: 1,
+		borderBottomWidth: 0.75,
 		borderColor: COLORS.WHITE,
 		margin: 5,
 		padding: 2,
