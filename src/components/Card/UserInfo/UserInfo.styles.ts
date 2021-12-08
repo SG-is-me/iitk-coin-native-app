@@ -7,13 +7,10 @@ const fontSize = FONT.SIZE.H3;
 const styles = StyleSheet.create({
 	container: {
 		alignItems: "flex-start",
-		backgroundColor: "#F2F2F2",
+		backgroundColor: COLORS.LIGHT_GREY,
 		borderRadius: 20,
 		elevation: 10,
-		// flexDirection: "row",
 		marginBottom: 20,
-		// maxHeight: 200,
-		// minHeight: 100,
 		padding: fontSize,
 		position: "relative",
 		shadowColor: COLORS.BLACK,
@@ -39,8 +36,8 @@ const styles = StyleSheet.create({
 		fontSize: fontSize / 1.5,
 	},
 	value: {
-		color: "#414141",
-		fontSize: fontSize*1.07,
+		color: COLORS.CHARCOAL_GREY,
+		fontSize: fontSize * 1.07,
 		opacity: 1,
 		paddingTop: 2,
 

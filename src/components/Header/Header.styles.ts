@@ -21,12 +21,15 @@ const styles = StyleSheet.create({
 		top: 0,
 		width: "100%",
 	},
+	iitk: {
+		letterSpacing: 4,
+	},
 	shrinked: {
 		alignItems: "center",
 		backgroundColor: COLORS.MAIN_BG,
 		height: LAYOUT.SCREEN.HEIGHT * 0.06,
 		width: "100%",
-	},
+	}
 });
 
 export default styles;
