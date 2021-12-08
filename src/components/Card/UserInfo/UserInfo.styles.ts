@@ -7,7 +7,7 @@ const fontSize = FONT.SIZE.H3;
 const styles = StyleSheet.create({
 	container: {
 		alignItems: "flex-start",
-		backgroundColor: COLORS.GREY,
+		backgroundColor: "#F2F2F2",
 		borderRadius: 20,
 		elevation: 10,
 		// flexDirection: "row",
