@@ -22,9 +22,9 @@ const PageTitle:React.FC<Props> = ({title, onPressBack}) => {
 				rippleColor={COLORS.DARK_TEAL}
 				rippleContainerBorderRadius={20}
 				onPress={onPressBack}>
-				<Ionicons name="arrow-back-outline" size={styles.icon.fontSize} color={COLORS.BLACK} />
+				<Ionicons name="arrow-back-circle" size={styles.icon.fontSize} color="#303030" />
 			</Ripple>
-			<Text semibold style={styles.heading}>{title}</Text>
+			<Text semibold darkgrey style={styles.heading}>{title}</Text>
 		</View>
 
 	);
